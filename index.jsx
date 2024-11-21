@@ -4,6 +4,10 @@ import { render, unmountComponentAtNode } from 'react-dom';
 import Card from './Card';
 
 class CardCustomElement extends HTMLElement {
+  constructor() {
+    super();
+  }
+
   connectedCallback () {
     const props = Object.values(this.attributes).map(attribute => [attribute.name, attribute.value]);
     const appProps = Object.fromEntries(props);
